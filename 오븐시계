@@ -1,0 +1,11 @@
+a, b = map(int,input().split())
+c = int(input())
+k = b + c
+
+if k > 59:
+    a = int(a+k/60)
+    k=k%60
+    if a > 23:
+        a = a%24
+
+print(a, k)
