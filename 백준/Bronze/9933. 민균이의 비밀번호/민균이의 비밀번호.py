@@ -1,6 +1,5 @@
 n = int(input())
 li = []
-temp = []
 for _ in range(n):
     li.append(input())
 
