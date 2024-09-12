@@ -1,13 +1,15 @@
 while True:
-    n = int(input())
-    s = str(n)
-    a = ''
-    if n == 0:
-        break
+  a = int(input())
+  n = str(a)
+  res = ''
+  
+  if a == 0:
+    break
+  else:
+    for i in reversed(range(len(n))):
+      res += n[i]
+    
+    if n == res:
+      print('yes')
     else:
-        for i in reversed(range(len(s))):
-            a += s[i]
-        if a == s:
-            print('yes')
-        else:
-            print('no')
+      print('no')
