@@ -1,15 +1,20 @@
+import sys
+input = sys.stdin.readline
+
 n, k = map(int, input().split())
-coins=[]
-ans = 0
+w = []
+cnt = 0
+
 for _ in range(n):
-    coins.append(int(input()))
-coins.sort(reverse=True)
+  w.append(int(input()))
+w.sort(reverse=True)
 
-for coin in coins:
-    if k >= coin:
-        ans += k//coin
-        k %= coin
-        if k<=0:
-            break
+for i in w:
+  if k >= i:
+    cnt += k//i
+    k %= i
+    if k <= 0:
+      break
 
-print(ans)
+print(cnt)
+    
