@@ -33,21 +33,18 @@ public class Main {
       members.add(new Member(age, name, i));
     }
 
-    members.sort(new Comparator<Member>() {
-      @Override
-      public int compare(Member m1, Member m2) {
-        if (m1.age != m2.age) {
-          return Integer.compare(m1.age, m2.age);
-        } else {
-          return Integer.compare(m1.order, m2.order);
-        }
+    members.sort((m1, m2) -> {
+      if (m1.age != m2.age) {
+        return Integer.compare(m1.age, m2.age);
+      } else {
+        return Integer.compare(m1.order, m2.order);
       }
     });
     StringBuilder sb = new StringBuilder();
     for (Member member : members) {
       sb.append(member.age).append(" ").append(member.name).append("\n");
     }
-    System.out.print(sb.toString());
+    System.out.print(sb);
 
   }
 }
