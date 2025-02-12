@@ -4,6 +4,9 @@ for _ in range(4):
 n = int(input())
 r = []
 cnt = 0
+for _ in range(n):
+    num, d = map(int, input().split())
+    r.append((num, d))
 
 def rotate(num, d):
     rotation = [0] * 4
@@ -15,21 +18,17 @@ def rotate(num, d):
         else:
             break
 
-    for i in range(num, 3):
-        if gear[i][2] != gear[i+1][6]:
-            rotation[i+1] = -rotation[i]
+    for j in range(num, 3):
+        if gear[j][2] != gear[j+1][6]:
+            rotation[j+1] = -rotation[j]
         else:
             break
 
-    for i in range(4):
-        if rotation[i] == -1:
-            gear[i] = gear[i][1:] + [gear[i][0]]
-        elif rotation[i] == 1:
-            gear[i] = [gear[i][-1]] + gear[i][0:7]
-
-for _ in range(n):
-    num, d = map(int, input().split())
-    r.append((num, d))
+    for k in range(4):
+        if rotation[k] == -1:
+            gear[k] = gear[k][1:] + [gear[k][0]]
+        elif rotation[k] == 1:
+            gear[k] = [gear[k][-1]] + gear[k][0:7]
 
 for num, d in r:
     rotate(num - 1, d)
