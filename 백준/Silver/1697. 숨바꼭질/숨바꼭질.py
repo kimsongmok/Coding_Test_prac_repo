@@ -17,5 +17,4 @@ def bfs():
                 visited[nx] = visited[x] + 1
                 q.append(nx)
 
-
 bfs()
