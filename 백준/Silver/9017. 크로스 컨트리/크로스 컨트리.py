@@ -3,7 +3,6 @@ t = int(input())
 for _ in range(t):
   t_i = int(input())
   team_num = list(map(int, input().split()))
-  team_num_set = set(sorted(team_num))
   
   cnt = {}
   for i in team_num:
